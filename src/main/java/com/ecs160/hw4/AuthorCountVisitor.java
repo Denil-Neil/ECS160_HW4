@@ -3,7 +3,6 @@ package com.ecs160.hw4;
 import java.util.HashSet;
 import java.util.Set;
 
-// Concrete visitor for counting authors
 public class AuthorCountVisitor implements PostVisitor {
     private Set<String> authors = new HashSet<>();
 

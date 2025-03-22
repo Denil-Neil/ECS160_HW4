@@ -11,7 +11,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-// JSON Parser class using Gson instead of json-simple
 public class BlueskyJsonParser {
     public static List<PostComponent> parseJson(String jsonFilePath) {
         List<PostComponent> components = new ArrayList<>();

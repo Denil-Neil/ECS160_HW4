@@ -112,15 +112,19 @@ public class Main {
                         hashtag);
 
                 // Print the replies
+                int i = 0;
                 for (Post reply : thread.getReplies()) {
-                    String replyHashtag = "#bskypost"; // Default hashtag for replies
-                    if (reply.hasDecoration("hashtag")) {
-                        replyHashtag = (String) reply.getDecoration("hashtag");
+                    if (i <= 10) {
+                        String replyHashtag = "#bskypost"; // Default hashtag for replies
+                        if (reply.hasDecoration("hashtag")) {
+                            replyHashtag = (String) reply.getDecoration("hashtag");
+                        }
+                        System.out.printf("  ↪ %s (%d likes): %s\n    Hashtag: %s\n",
+                                reply.getAuthor(), reply.getLikeCount(),
+                                reply.getText().length() > 50 ? reply.getText().substring(0, 47) + "..." : reply.getText(),
+                                replyHashtag);
+                        i += 1;
                     }
-                    System.out.printf("  ↪ %s (%d likes): %s\n    Hashtag: %s\n",
-                            reply.getAuthor(), reply.getLikeCount(),
-                            reply.getText().length() > 50 ? reply.getText().substring(0, 47) + "..." : reply.getText(),
-                            replyHashtag);
                 }
             }
         }
